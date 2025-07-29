@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Chai Page
+{% endblock %}
+
+{% block content %}
+<h1>All Chai aur Django</h1>
+
+{% for chai in chais %}
+<div>
+    <img width="200px" src="{{chai.image.url}}" alt="" />
+    <h1>{{chai.name}}</h1>
+    <a href="{% url 'chai_detail' chai.id %}">checkout</a>
+</div>
+{% endfor %}
+
+{% endblock %}        
